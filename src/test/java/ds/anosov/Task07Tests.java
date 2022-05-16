@@ -71,4 +71,13 @@ public class Task07Tests {
         Calculation.setSecondNumber(-5);
         Assertions.assertEquals(250.0, Calculation.multiplication());
     }
+
+    @Test
+    @DisplayName("Проверка деления на 0")
+    public void testDivisionZero() {
+        Calculation.setFirstNumber(-2);
+        Calculation.setSecondNumber(0);
+        Assertions.assertEquals("Ошибка деления на ноль", Calculation.division());
+    }
+
 }
