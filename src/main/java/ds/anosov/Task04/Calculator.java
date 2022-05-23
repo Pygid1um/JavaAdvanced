@@ -30,7 +30,7 @@ public class Calculator {
             e.printStackTrace();
         }
         catch (ArithmeticException e1) {
-            System.err.println("Внимание! Делить на 0 нельзя! " + e1);
+            System.err.println("Внимание! Делить на 0 нельзя! \n" + e1);
             e1.printStackTrace();
         }
         catch (Exception e2) {

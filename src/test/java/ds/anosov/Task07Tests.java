@@ -1,9 +1,11 @@
 package ds.anosov;
 
 import ds.anosov.Task04.Calculation;
+import ds.anosov.Task04.ScannerCalc;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class Task07Tests {
@@ -75,9 +77,20 @@ public class Task07Tests {
     @Test
     @DisplayName("Проверка деления на 0")
     public void testDivisionZero() {
-        Calculation.setFirstNumber(-2);
+        Calculation.setFirstNumber(2);
         Calculation.setSecondNumber(0);
-        Assertions.assertEquals("Ошибка деления на ноль", Calculation.division());
+        assertThrows(ArithmeticException.class, () ->
+                 Calculation.division(), "Внимание! Вы ввели не 0");
+    }
+
+    @Test
+    @DisplayName("Проверка ввода")
+    public void testType() {
+        Calculation.setFirstNumber(2.8);
+        Calculation.setSecondNumber(3);
+
+        assertThrows(Exception.class, () ->
+                ScannerCalc.numberScanner(), "Вы ввели не корректное число!");
     }
 
 }

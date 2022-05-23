@@ -6,6 +6,11 @@ repositories {
     mavenCentral()
 }
 
+//Если ошибки теста выдаются в символах, нужно разкомментить эти строчки
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
     testImplementation(
             "com.codeborne:selenide:6.4.0",
